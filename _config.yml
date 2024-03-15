@@ -1,6 +1,6 @@
-title: Blog
-author: Pawel Frankowski
-description: My private blog for projects that I work on
-remote_theme: pages-themes/minimal@v0.2.0
+title: Developer posts by Paweł Frankowski
+author: Paweł Frankowski
+description: Hi, thanks for visiting my developer posts, enjoy!
+remote_theme: pages-themes/midnight@v0.2.0
 plugins:
 - jekyll-remote-theme
