@@ -2,5 +2,6 @@ title: Developer posts by Paweł Frankowski
 author: Paweł Frankowski
 description: Hi, thanks for visiting my developer posts, enjoy!
 remote_theme: pages-themes/midnight@v0.2.0
+repository: pablolambo/blog
 plugins:
 - jekyll-remote-theme
