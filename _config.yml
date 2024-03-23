@@ -3,5 +3,8 @@ author: Paweł Frankowski
 description: Hi, thanks for visiting my developer posts, enjoy!
 remote_theme: pages-themes/midnight@v0.2.0
 repository: pablolambo/blog
+lang: en-US
 plugins:
 - jekyll-remote-theme
+- jekyll-seo-tag
+
