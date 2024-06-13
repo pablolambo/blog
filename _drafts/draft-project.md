@@ -2,6 +2,8 @@
 title: "A new project idea"
 date: 2024-03-15
 author: Paweł Frankowski
+category: Ideas
+tags: [idea, programming, raspberry]
 ---
 
 # A New Project Idea: Remote Environmental Monitor
