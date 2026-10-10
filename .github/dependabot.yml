@@ -1,6 +1,53 @@
+# Dependabot version updates. Security updates are sent separately and are
+# not limited by this schedule or the cooldown below.
 version: 2
+
 updates:
+  # Gems (Gemfile / Gemfile.lock)
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Europe/Warsaw"
+    open-pull-requests-limit: 5
+    # Wait before proposing new releases. A malicious release is often pulled
+    # within days, so a short delay lowers the chance of taking it.
+    cooldown:
+      default-days: 7
+      semver-major-days: 14
+    groups:
+      minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+    labels:
+      - "dependencies"
+      - "ruby"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+
+  # GitHub Actions used in .github/workflows
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "monthly"
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Europe/Warsaw"
+    open-pull-requests-limit: 5
+    cooldown:
+      default-days: 7
+      semver-major-days: 14
+    groups:
+      actions:
+        patterns:
+          - "*"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
