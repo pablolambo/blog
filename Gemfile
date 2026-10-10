@@ -9,4 +9,4 @@ end
 gem "webrick", "~> 1.8"
 
 # nokogiri 1.19+ requires Ruby >= 3.2; the Pages build runs on Ruby 3.1.
-gem "nokogiri", "~> 1.16.3"
+gem "nokogiri", "~> 1.19.4"
