@@ -7,10 +7,6 @@ layout: default
   <div class="reveal">
     <h1>Paweł Frankowski</h1>
     <p>A blog about me and the things I find interesting.</p>
-    <ul class="links">
-      <li><a href="{{ site.github_url }}" rel="me noopener" target="_blank">github</a></li>
-      <li><a href="{{ site.linkedin_url }}" rel="me noopener" target="_blank">linkedin</a></li>
-    </ul>
   </div>
 </section>
 
