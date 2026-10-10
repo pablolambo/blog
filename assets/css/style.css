@@ -147,24 +147,6 @@ a:hover { border-bottom-color: var(--accent); }
 }
 .reveal.show { opacity: 1; transform: none; }
 
-.links {
-  list-style: none;
-  padding: 0;
-  margin: 18px 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.links a {
-  display: inline-block;
-  padding: 4px 12px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  color: var(--text);
-  border-bottom: 1px solid var(--border);
-}
-.links a:hover { border-color: var(--accent); color: var(--accent); }
-
 .section-title { font-size: 16px; font-weight: 500; margin: 40px 0 12px; }
 
 .post-list { list-style: none; padding: 0; margin: 0; }
