@@ -1,9 +1,16 @@
-title: Paweł Frankowski's blog
+title: Paweł Frankowski
+description: Blog about Paweł Frankowski and the things he finds interesting
 author: Paweł Frankowski
-description: Tech blog on topics I find interesting
-remote_theme: pages-themes/midnight@v0.2.0
+url: "https://blog.pawelfrankowski.eu"
+lang: en
 repository: pablolambo/blog
-lang: en-US
+github_url: https://github.com/pablolambo
+linkedin_url: https://www.linkedin.com/in/pawel-frankowski-pk/
 plugins:
-- jekyll-remote-theme
 - jekyll-seo-tag
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
