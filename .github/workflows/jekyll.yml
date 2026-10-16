@@ -7,8 +7,12 @@
 name: Deploy Jekyll site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
+  # Builds and deploys on pushes targeting the default branch
   push:
+    branches: ["main"]
+
+  # Builds only (no deploy) to validate pull requests
+  pull_request:
     branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -21,10 +25,12 @@ permissions:
   id-token: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# However, do NOT cancel in-progress runs on main as we want to allow these production deployments to complete.
+# Every other ref (pull requests, manual runs on a branch) gets its own group, so validation runs can never
+# queue behind or replace a production deploy, and a newer run for the same ref replaces the older one.
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: pages-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 jobs:
   # Build job
@@ -48,11 +54,14 @@ jobs:
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
+        # Only needed for the deploy job, so skip it for pull requests and branch runs
+        if: github.ref == 'refs/heads/main'
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v5
 
-  # Deployment job
+  # Deployment job, runs only for the default branch
   deploy:
+    if: github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
